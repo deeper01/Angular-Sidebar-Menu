@@ -1,0 +1,48 @@
+
+<section class="app-component">
+  <div class="row">
+    <div class="col-lg-2">
+      <div class="main-box">
+
+        <div class="side-menu-list">
+          <ul class="menu-items">
+            <li (click)= "goTo('home')"[ngClass]= "{onActive:selectedMenu == 'home'}" routerLink="/home"><i class="fa fa-home" aria-hidden="true"></i>Home</li>
+            <li (click)= "goTo('one')"[ngClass]= "{onActive:selectedMenu == 'one'}" routerLink="/one"><i class="fa fa-dot-circle-o" aria-hidden="true" ></i>Page 1</li>
+            <li (click)= "goTo('two')"[ngClass]= "{onActive:selectedMenu == 'two'}" routerLink="/two"><i class="fa fa-dot-circle-o" aria-hidden="true"></i>Page 2</li>
+            <li (click)= "goTo('three')"[ngClass]= "{onActive:selectedMenu == 'three' }" routerLink="/three"><i class="fa fa-dot-circle-o" aria-hidden="true" ></i>Page 3</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-9">
+      <div class="side-menu-content">
+        <div class="tabs" *ngIf= "selectedMenu == 'home'" routerLink="/home">
+
+            <router-outlet></router-outlet>
+
+
+        </div>
+        <div class="tabs" *ngIf= "selectedMenu == 'one'" routerLink="/one">
+            <app-counter>
+              <router-outlet></router-outlet>
+            </app-counter>
+
+
+
+        </div>
+        <div class="tabs" *ngIf= "selectedMenu == 'two'" routerLink="/two">
+          <router-outlet></router-outlet>
+
+        </div>
+        <div class="tabs" *ngIf= "selectedMenu == 'three'" routerLink="/three">
+
+            <router-outlet></router-outlet>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
